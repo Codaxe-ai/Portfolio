@@ -1,0 +1,169 @@
+/* General Styles */
+body {
+    background-color: #1f2937;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(31, 41, 55, 0.9);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #374151;
+    border-radius: 5px;
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    max-width: 1000px;
+}
+
+/* Cards */
+.card {
+    background: rgba(55, 65, 81, 0.9); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Project Carousel */
+.carousel {
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+    text-align: center;
+    background: rgba(55, 65, 81, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Slide Items */
+.carousel-item {
+    display: none;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.carousel-item.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.arrow:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+/* Dots for Navigation */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    opacity: 1;
+    background: #00bcd4;
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .container {
+        width: 90%;
+    }
+    .carousel {
+        width: 100%;
+    }
+}
+
+
+.carousel-item a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.carousel-item a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}

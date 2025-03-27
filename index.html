@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyle John Elemento - Web Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#references">References</a>
+    </nav>
+
+    <section id="home">
+        <div class="container">
+            <div class="card">
+                <h1>Welcome!</h1>
+                <p>I am a 4th-year BSIT student with a strong passion for web development, specializing in front-end and back-end technologies. I have experience working with HTML, CSS, JavaScript, and PHP, and I enjoy creating responsive, user-friendly web applications. My goal is to develop innovative and efficient solutions that enhance user experience and functionality. I am eager to learn new technologies and continuously improve my skills to keep up with the ever-evolving tech industry.</p>
+                <p><strong>Web Developer | BSIT</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h1>PROJECTS</h1>
+           <div class="carousel">
+    <div class="carousel-item active">
+        <a href="lumber-purchasing.html" target="_blank">
+            <h2>Lumber Purchasing System</h2>
+            <p>A capstone project designed to streamline lumber purchases, featuring order tracking and inventory management.</p>
+        </a>
+    </div>
+    <div class="carousel-item">
+        <a href="inventory-management.html" target="_blank">
+            <h2>Inventory Management System</h2>
+            <p>A project focused on managing inventory levels, orders, sales, and deliveries efficiently.</p>
+        </a>
+    </div>
+    <div class="carousel-item">
+        <a href="order-tracking.html" target="_blank">
+            <h2>Order Tracking System</h2>
+            <p>A system designed to track orders from placement to delivery, ensuring timely updates and customer satisfaction.</p>
+        </a>
+    </div>
+    <span class="arrow left" onclick="prevSlide(event)">&#10094;</span>
+    <span class="arrow right" onclick="nextSlide(event)">&#10095;</span>
+</div>
+
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h1>ABOUT</h1>
+            <div class="card">
+                <p>Hi, I'm Kyle John Elemento, a passionate Web Developer and 4th-year BSIT student specializing in front-end and back-end development.</p>
+                <p>I love building efficient and user-friendly web applications using HTML, CSS, JavaScript, and PHP.</p>
+                <h2>Skills & Expertise</h2>
+                <ul>
+                    <li>Front-End: HTML, CSS, JavaScript, Bootstrap</li>
+                    <li>Back-End: PHP, MySQL</li>
+                    <li>Other: Git, API Integration</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="references">
+        <div class="container">
+            <h1>REFERENCES</h1>
+            <div class="card">
+                <p><strong>Engr. John Smith</strong></p>
+                <p>Senior Web Developer - Tech Solutions Inc.</p>
+                <p>Email: john.smith@example.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+            </div>
+            <div class="card">
+                <h2>Contact</h2>
+                <p>Email: your.email@example.com</p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/kylejohn">linkedin.com/in/kylejohn</a></p>
+                <p>GitHub: <a href="https://github.com/kylejohn">github.com/kylejohn</a></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth Scrolling
+       // Project Carousel
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-item');
+const dotsContainer = document.createElement('div');
+dotsContainer.classList.add('carousel-dots');
+document.querySelector('.carousel').appendChild(dotsContainer);
+
+// Create dots dynamically
+slides.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => showSlide(index));
+    dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        dots[i].classList.toggle('active', i === index);
+    });
+    currentSlide = index;
+}
+
+function nextSlide(event) {
+    event.preventDefault();
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide(event) {
+    event.preventDefault();
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+    </script>
+</body>
+</html>
